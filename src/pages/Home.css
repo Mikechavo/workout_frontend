@@ -1,0 +1,28 @@
+.home-container{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.image-background {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.home-image{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.home-title {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 30%;
+  left: 50%;
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}

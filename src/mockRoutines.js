@@ -1,4 +1,4 @@
-const mockRoutines = [
+let mockRoutines = [
   {
     id: 1,
     muscle_group: 'Tricep Pull Downs',
