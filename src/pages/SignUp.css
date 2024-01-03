@@ -1,0 +1,46 @@
+.signup-container{
+  display: grid;
+  grid-template-rows: 2fr 4fr;
+  justify-content: center;
+  border: 2px solid black;
+  width: auto;
+  height: 100vh;
+  text-align: center;
+  > h2 {
+    align-self: end;
+  };
+  background-color: beige;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: max-content;
+}
+
+.input-container{
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+
+  > label {
+    justify-self: end;
+    font-weight: 500;
+    font-style: bold;
+  }
+  
+}
+
+
+input {
+  width: 100%;
+
+}
+
+#submit {
+  width: 25%;
+  
+}

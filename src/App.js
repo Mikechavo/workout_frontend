@@ -18,6 +18,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/routineindex" element={<RoutineIndex />} />
         <Route path="/routineshow" element={<RoutineShow />} />
         <Route path="/routinenew" element={<RoutineNew />} />
