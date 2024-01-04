@@ -45,7 +45,7 @@ const Header = ({ currentUser, signOut }) => {
         <>
           <NavItem>
             <NavLink to="/signin" className="nav-link">
-              Log In
+              Sign In
             </NavLink>
           </NavItem>
           <NavItem>

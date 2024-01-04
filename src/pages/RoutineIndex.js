@@ -1,12 +1,36 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import { Card, CardBody, CardTitle, CardSubtitle, Button, CardImg } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import mockRoutines from '../mockRoutines';
 
 const RoutineIndex = () => {
+
+  const [routines, setRoutines] = useState([]);
+  const [newRoutine, setNewRoutine] = useState({
+    muscle_group: '',
+    sets: '',
+    reps: '',
+    weight: '',
+    image: '',
+    notes: '',
+  });
+
+
+  const handleInputChange = (e) => {
+    const { muscle_group, value } = e.target;
+    setNewRoutine({ ...newRoutine, [muscle_group]: value });
+  };
+
+  const handleAddRoutine = () => {
+    // You can implement logic here to add the new routine to your data or API
+    // For now, let's just log it to the console
+    console.log('New Routine:', newRoutine);
+  };
+
   return (
     <>
       <div>
+        <br></br>
         <div className='index-title'>
         <h1>Recent Added Routine's</h1>
         </div>

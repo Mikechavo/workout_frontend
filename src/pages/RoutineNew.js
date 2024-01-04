@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom"
 const RoutineNew = () => {
   return (
     <div>
+      <br></br>
       <h1>Info</h1>
         
        
