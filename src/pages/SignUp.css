@@ -1,4 +1,4 @@
-.signup-container{
+.signup-body{
   display: grid;
   grid-template-rows: 2fr 4fr;
   justify-content: center;

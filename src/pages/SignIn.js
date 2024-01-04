@@ -1,47 +1,37 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useRef } from 'react'
+import './SignIn.css'
 
-const SignIn = ({ signIn }) => {
-
-  const navigate = useNavigate()
+const SignIn = ({ login }) => {
   const formRef = useRef()
+  const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const formData = new FormData(formRef.current)
     const data = Object.fromEntries(formData)
-    // what we are going to pass into our signIn method
     const userInfo = {
-      user: { email: data.email, password: data.password },
+      "user": { email: data.email, password: data.password }
     }
-    signIn(userInfo)
+    login(userInfo)
     navigate("/")
     e.target.reset()
   }
 
   return (
-    <>
-      <div className='signup-container'>
-        <h2>Sign in to your account</h2>
-        {/* calling attribute ref={formRef} lets formData know what to reference */}
-        <form className='form-container' onSubmit={handleSubmit} ref={formRef}>
-
-          <div className='input-container'>
-            <label>Email:</label> 
-            <input type='email' name='email' placeholder='Enter Email' />
-            
-          </div>
-
-          <div className='input-container'>
-            <label>Password:</label> 
-            <input type='password' name='password' placeholder='Enter Password' />
-          </div>
-
-          <input id="submit" type="submit" value="submit" />
-        </form>
-
-      </div>
-    </>
+    <div className='signin-body'>
+      <h2>Login</h2>
+      <form className='signin-form' ref={formRef} onSubmit={handleSubmit}>
+        Email: <input type="email" name="email" placeholder="email" className='signin-input' />
+        <br />
+        Password: <input type="password" name="password" placeholder="password" className='signin-input' />
+        <br />
+        <input className="submit-form" type='submit' value="Login" />
+        <div className="bottom-link">Not registered?
+          <a href="/signup">  <u style={{ textDecoration: "none" }}>Sign Up</u></a>
+        </div>
+      </form>
+    </div>
   )
 }
 

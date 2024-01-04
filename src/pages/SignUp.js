@@ -20,7 +20,6 @@ const SignUp = ({ signup }) => {
 
   return (
     <div className='signup-body'>
-      <br></br>
       <h2 className='sign-header'>Sign Up</h2>
       <form className='signup-form' ref={formRef} onSubmit={handleSubmit}>
         Username: <input type="text" name="username" placeholder="username" className='signup-input' />

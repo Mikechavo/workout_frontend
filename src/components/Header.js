@@ -8,6 +8,8 @@ const Header = ({ currentUser, signOut }) => {
     signOut()
   }
 
+  
+
   return (
     <Nav className='nav-bar'>
       <NavItem>
