@@ -1,5 +1,6 @@
 import React from 'react'
 import '../pages/Home.css'
+import fitHome from '../assets/fitHome.png'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
 
       <div className='home-title'>
         <h1>Welcome to FitFolio</h1>
+        <img src= {fitHome}/>
       </div>
     </div>
   )
