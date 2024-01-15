@@ -1,12 +1,18 @@
-import React from "react"
+import React, {useState} from "react"
 import { Nav, NavItem } from "reactstrap"
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import './Header.css'
 
-const Header = ({ currentUser, signOut }) => {
-  const handleClick = () => {
-    signOut()
+const Header = ({ currentUser, logout }) => {
+  const navigate = useNavigate()
+
+ const signOut = () => {
+    logout() 
+    navigate("/")
   }
+
+  const [click, setClick] = useState(false)
+  const handleClick = () => setClick(!click)
 
   
 
@@ -19,12 +25,7 @@ const Header = ({ currentUser, signOut }) => {
       </NavItem>
       <NavItem>
         <NavLink to="/routineindex" className="nav-link">
-          See All Routines
-        </NavLink>
-      </NavItem>
-      <NavItem>
-        <NavLink to="/routinenew" className="nav-link">
-          New Routine
+          Example Routines
         </NavLink>
       </NavItem>
       {/* currentuser exists */}
@@ -36,7 +37,12 @@ const Header = ({ currentUser, signOut }) => {
           </NavLink>
         </NavItem>
         <NavItem>
-        <NavLink to="/" className="nav-link" onClick={handleClick}>
+        <NavLink to="/routinenew" className="nav-link">
+          New Routine
+        </NavLink>
+      </NavItem>
+        <NavItem>
+        <NavLink to="/" className="nav-link" onClick={signOut}>
           Sign Out
         </NavLink>
       </NavItem>

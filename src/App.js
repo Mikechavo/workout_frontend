@@ -67,13 +67,29 @@ const App = () => {
       })
       .catch((error) => console.log("login errors: ", error))
   }
-  
+
+  const logout = (id) => {
+    fetch(`${url}/logout`, {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      method: "DELETE",
+    })
+      .then((payload) => {
+        setCurrentUser(null)
+        localStorage.removeItem("token")
+        localStorage.removeItem("user")
+      })
+      .catch((error) => console.log("logout errors: ", error))
+  }
+
   return (
     <>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<SignIn login={login} />} />
+        <Route path="/signin" element={<SignIn login={login} />} />
         <Route path="/signup" element={<SignUp signup={signup} />} />
         <Route path="/routineindex" element={<RoutineIndex />} />
         <Route path="/routineshow" element={<RoutineShow />} />
