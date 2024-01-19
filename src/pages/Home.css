@@ -2,12 +2,23 @@
   width: 100%;
   height: 100vh;
   position: relative;
+  
 }
 
 .image-background {
   width: 100%;
   height: 100vh;
-  position: relative;
+  background-image: url('../assets/gym.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  background-color: #876421;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.9;
 }
 
 .home-image{
